@@ -1,0 +1,25 @@
+The .sav extension is common to see, and .sav files are default in SPSS.  I had several files that were originally created in SPSS and were .sav format.
+I considered my options to read the files:
+  1. Purchase SPSS
+  2. Purchase Colectica or a similar Excel extension
+  3. Use an iffy online converter to upload the files and convert from .sav to .csv
+  4. Download an iffy conversion program
+  5. Use R Studio + a library designed for viewing and converting .sav
+  
+I looked into these options, and decided that 1-4 were out of the question. I would try number #5 (why? Because R rocks.)  
+
+I installed the haven library using CRAN.
+
+install.packages("haven")
+
+Next, I read the .sav document using the haven library in R Studio:
+
+library(haven)
+
+path = file.path("C:/", "Folder", "Folder", "dataset.sav")
+dataset = read_sav(path)
+
+et Voila!
+
+Thank you R Studio, CRAN, and the haven library for saving me money, time, frustration, vendor lock-in, and for allowing me to collaborate with those using closed-
+source statistical software like SPSS, SAS, and STATA.
